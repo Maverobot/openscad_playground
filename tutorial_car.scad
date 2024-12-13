@@ -5,12 +5,12 @@ $fs = 0.4;
 
 // Car parameters
 base_height = 10;
-top_height = 14;
-track = 40;
+top_height = 10;
+track = 30;
 wheel_radius = 8;
-wheel_width = 10;
-wheel_turn = 20;
-body_roll = -5;
+wheel_width = 4;
+wheel_turn = -20;
+body_roll = 0;
 
 // Lower car chassis
 rotate([body_roll, 0, 0]) {
@@ -27,29 +27,32 @@ rotate([body_roll, 0, 0]) {
 
 // Front left wheel
 translate([-20, -track/2, 0])
-  rotate([90, 0, wheel_turn])
-    cylinder(h=wheel_width, r=wheel_radius, center=true);
+rotate([0, 0, wheel_turn])
+resize([2*wheel_radius, wheel_width, 2*wheel_radius])
+sphere(r=wheel_radius);
 
 // Front right wheel
 translate([-20, track/2, 0])
-  rotate([90, 0, wheel_turn])
-    cylinder(h=wheel_width, r=wheel_radius, center=true);
-
-// Front axle
-translate([-20, 0, 0])
-  rotate([90, 0, 0])
-    cylinder(h=track, r=2, center=true);
-
+rotate([0, 0, wheel_turn])
+resize([2*wheel_radius, wheel_width, 2*wheel_radius])
+sphere(r=wheel_radius);
 
 // Rear left wheel
 translate([20, -track/2, 0])
-  rotate([90, 0, 0])
-    cylinder(h=wheel_width, r=wheel_radius, center=true);
+rotate([0, 0, 0])
+resize([2*wheel_radius, wheel_width, 2*wheel_radius])
+sphere(r=wheel_radius);
 
 // Front right wheel
 translate([20, track/2, 0])
-  rotate([90, 0, 0])
-    cylinder(h=wheel_width, r=wheel_radius, center=true);
+rotate([0, 0, 0])
+resize([2*wheel_radius, wheel_width, 2*wheel_radius])
+sphere(r=wheel_radius);
+
+// Front axle
+translate([-20, 0, 0])
+rotate([90, 0, 0])
+cylinder(h=track, r=2, center=true);
 
 // Rear axle
 translate([20, 0, 0])
@@ -57,5 +60,5 @@ translate([20, 0, 0])
     cylinder(h=track, r=2, center=true);
 
 // Local Variables:
-// eval: (setq scad-preview-camera '(0 0 0 70 0 -90 300))
+// eval: (setq scad-preview-camera '(0 0 0 80 0 -90 300))
 // End:
