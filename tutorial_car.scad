@@ -15,31 +15,17 @@ rotate([body_roll, 0, 0]) {
   body();
 }
 
-// Front left wheel
-translate([-20, -track/2, 0])
-rotate([0, 0, wheel_turn])
-simple_wheel();
-
-// Front right wheel
-translate([-20, track/2, 0])
-rotate([0, 0, wheel_turn])
-simple_wheel();
-
-// Front axle
+// Front axle and wheel
 translate([-20, 0, 0])
-axle(track);
+axle_wheel_set() {
+  simple_wheel();
+}
 
 // Rear left wheel
-translate([20, -track/2, 0])
-complex_wheel();
-
-// Front right wheel
-translate([20, track/2, 0])
-complex_wheel();
-
-// Rear axle
 translate([20, 0, 0])
-axle(track);
+axle_wheel_set() {
+  complex_wheel();
+}
 
 // Local Variables:
 // eval: (setq scad-preview-camera '(0 0 0 70 0 0 300))

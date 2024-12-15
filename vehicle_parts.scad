@@ -32,18 +32,27 @@ module complex_wheel(wheel_radius=10, side_sphere_radius=50, hub_thickness=4, cy
 // Car chassis
 module body(base_height=10, top_height=14, base_length=60, top_length=30, width = 20, offset = 5) {
   // Lower car chassis
-    rotate([0, 0, 0])
-      cube([base_length, width, base_height], center=true);
-    // Upper car chassis
-    translate([offset, 0, base_height/2 + top_height/2])
-      cube([top_length, width, top_height], center=true);
-    // Connect the upper and lower chassis
-    translate([0, 0, base_height/2 - 0.001])
-      cube([top_length, width, 0.002], center=true);
+  rotate([0, 0, 0])
+    cube([base_length, width, base_height], center=true);
+  // Upper car chassis
+  translate([offset, 0, base_height/2 + top_height/2])
+    cube([top_length, width, top_height], center=true);
+  // Connect the upper and lower chassis
+  translate([0, 0, base_height/2 - 0.001])
+    cube([top_length, width, 0.002], center=true);
 }
 
 // Axle
-module axle(track=35) {
+module axle(track=35, radius=2) {
   rotate([90, 0, 0])
-    cylinder(h=track, r=2, center=true);
+    cylinder(h=track, r=radius, center=true);
+}
+
+
+module axle_wheel_set(track=35, radius=2) {
+  translate([0, track/2, 0])
+    children(0);
+  axle(track=track, radius=radius);
+  translate([0, -track/2, 0])
+    children(0);
 }
