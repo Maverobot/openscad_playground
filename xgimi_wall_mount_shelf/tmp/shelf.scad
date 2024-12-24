@@ -21,12 +21,12 @@ linear_extrude(height = 30)
 
 
 strip_thickness = 5;
-hexgon_distance = 12.5;
-extruding_hexgon_diameter = 9.9;
-extruding_hexgon_height = 4;
-number_of_hexgons = 18;
+hexagon_distance = 12.5;
+extruding_hexagon_diameter = 9.9;
+extruding_hexagon_height = 4;
+number_of_hexagons = 18;
 
-module extruding_hexgon(height = extruding_hexgon_height, radius= extruding_hexgon_diameter/2) {
+module extruding_hexagon(height = extruding_hexagon_height, radius= extruding_hexagon_diameter/2) {
   linear_extrude(height = height) {
     rotate([0, 0, 30])
       circle(r=radius, $fn=6);
@@ -35,11 +35,11 @@ module extruding_hexgon(height = extruding_hexgon_height, radius= extruding_hexg
 
 translate([0, depth, 0]) {
   translate([0, 0, strip_thickness]) {
-    for (i = [-((number_of_hexgons-1)/2):((number_of_hexgons-1)/2)]) {
-      translate([hexgon_distance*i, 0, 0])
-        extruding_hexgon();
+    for (i = [-((number_of_hexagons-1)/2):((number_of_hexagons-1)/2)]) {
+      translate([hexagon_distance*i, 0, 0])
+        extruding_hexagon();
     }
 
   }
-  cube([hexgon_distance * number_of_hexgons, extruding_hexgon_diameter, strip_thickness], anchor=BOTTOM);
+  cube([hexagon_distance * number_of_hexagons, extruding_hexagon_diameter, strip_thickness], anchor=BOTTOM);
 }
