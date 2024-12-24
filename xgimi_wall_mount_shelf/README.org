@@ -1,0 +1,14 @@
+I would like to have a shelf near to the wall-mounted xgimi projector to hold
+its cable and power brick, a Nvidia Shield TV and potentially a Nintendo Switch
+dock.
+
+For that purpose, I found a nicely extensible shelf:
+
++ Model: https://makerworld.com/en/models/833429#profileId-778237
+
+Since I don't want to drill holes in the wall. The plan to to use the existing
+wall mount and fix the shelf to it with a zip tie.
+
+However, the model here is not big enough to hold the power brick. In this
+folder, I create a customizable side wall of the shelf so that it can be
+arbitrarily large.
