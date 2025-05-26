@@ -9,7 +9,7 @@ screw_diameter = 30; // mm
 screw_pitch = 5; // mm
 screw_height = 35; // mm
 
-screw_cube_1_size = 36; // mm
+screw_cube_1_size = 35; // mm
 screw_cube_1_height = 30; // mm
 
 screw_cube_2_size = 50; // mm
