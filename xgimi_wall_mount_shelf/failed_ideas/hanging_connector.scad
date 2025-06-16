@@ -14,6 +14,8 @@ use <hexagon.scad>
 //
 // Top, Side and Bottom together form a U profile.
 
+// Note: This idea did not work out because the Nitendo switch won't have enough space behind the projector.
+
 // Minimal angle for a fragment
 $fa = 1;
 // Minimal size for a fragment
